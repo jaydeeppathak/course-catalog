@@ -15,7 +15,7 @@
     width: 40%;
     &__searchdiv {
       &__title {
-        @include getFont(14px, 600, #000000);
+        @include getFont(12px, 600, #000000);
       }
 
       &__search {
@@ -40,12 +40,24 @@
     }
     &__categorydiv {
       margin-top: 60px;
+
       &__title {
-        @include getFont(14px, 600, #000000);
+        @include getFont(12px, 600, #000000);
       }
 
       &__list {
         margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        &__item {
+          margin-top: 10px;
+          @include getFont(14px, 400, #000000);
+
+          &:first-child {
+            margin-top: 0px;
+          }
+        }
       }
     }
   }
