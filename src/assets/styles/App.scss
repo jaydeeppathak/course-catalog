@@ -1,0 +1,230 @@
+@mixin getFont($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+.app {
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 20px 10px;
+    gap: 40px;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    padding: 20px 10px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 40px 100px;
+  }
+
+  &__sidebar {
+    width: 15%;
+    padding-left: 10px;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+    @media only screen and (min-width: 600px) {
+      width: 30%;
+    }
+    @media only screen and (min-width: 768px) {
+      width: 30%;
+    }
+    @media only screen and (min-width: 992px) {
+      width: 20%;
+    }
+
+    &__searchdiv {
+      &__title {
+        @include getFont(12px, 600, $black);
+      }
+
+      &__search {
+        width: 160px;
+        margin-top: 20px;
+        border: 0px;
+        border-bottom: 1px solid $borderGray;
+        padding: 2px 0 6px 4px;
+
+        @media only screen and (max-width: 600px) {
+          width: calc(100% - 20px);
+        }
+
+        &__icon {
+          width: 18px;
+          vertical-align: middle;
+        }
+        &__input {
+          border: 0px;
+          padding: 2px 0 0px 6px;
+          width: 130px;
+          background: $backgroundWhite;
+          &:focus-visible {
+            outline: 0px;
+          }
+
+          @media only screen and (max-width: 600px) {
+            width: calc(100% - 30px);
+          }
+        }
+      }
+    }
+    &__categorydiv {
+      margin-top: 60px;
+
+      &__title {
+        @include getFont(12px, 600, $black);
+      }
+
+      &__list {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        &__item {
+          margin-top: 10px;
+          @include getFont(14px, 500, $black);
+
+          &:first-child {
+            margin-top: 0px;
+          }
+
+          &__input {
+            cursor: pointer;
+          }
+
+          &__label {
+            margin-left: 6px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  &__courses {
+    width: 85%;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 600px) {
+      width: 70%;
+    }
+    @media only screen and (min-width: 768px) {
+      width: 70%;
+    }
+    @media only screen and (min-width: 992px) {
+      width: 80%;
+    }
+
+    &__header {
+      @include getFont(16px, 500, $gray);
+    }
+
+    &__div {
+      margin-top: 20px;
+      display: flex;
+      gap: 30px;
+      row-gap: 30px;
+      flex-wrap: wrap;
+
+      @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+    &__card {
+      padding: 20px;
+      width: 320px;
+      background-color: $white;
+      box-shadow: 0px 1px 3px 0px $lightGray;
+      display: flex;
+      flex-direction: column;
+
+      @media only screen and (max-width: 600px) {
+        width: calc(100% - 40px);
+        padding: 20px;
+      }
+
+      &__titlerow {
+        display: flex;
+
+        &__bluedot {
+          min-height: 50px;
+          min-width: 50px;
+          border-radius: 30px;
+          background-color: $courseBlue;
+        }
+        &__div {
+          display: flex;
+          flex-direction: column;
+          margin-left: 16px;
+          row-gap: 4px;
+          &__title {
+            @include getFont(16px, 500, $black);
+          }
+
+          &__instructor {
+            @include getFont(12px, 600, $black);
+          }
+        }
+      }
+      &__descriptionrow {
+        margin-left: 4px;
+        margin-top: 70px;
+
+        &__div {
+          display: flex;
+
+          &__icon {
+            width: 18px;
+            margin-bottom: auto;
+            margin-top: 6px;
+          }
+
+          &__text {
+            margin-left: 20px;
+            @include getFont(12px, 500, $infoGray);
+          }
+        }
+      }
+      &__detailsrow {
+        margin-left: 4px;
+        margin-top: 40px;
+
+        &__div {
+          display: flex;
+
+          &__icon {
+            width: 18px;
+            margin-bottom: auto;
+            margin-top: 2px;
+          }
+
+          &__info {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2px;
+
+            &__title {
+              @include getFont(12px, 600, $infoGray);
+            }
+
+            &__duration {
+              font-style: italic;
+              @include getFont(12px, 400, $infoGray);
+            }
+          }
+        }
+      }
+    }
+  }
+}

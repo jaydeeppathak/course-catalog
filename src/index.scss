@@ -1,9 +1,8 @@
 @import '../src/assets/styles/variables.scss';
-@import '../src/App.scss';
+@import '../src/assets/styles/App.scss';
 
 body {
-	// font-family: 'Poppins', sans-serif;
-	font-family: 'Open Sans', sans-serif;
-	background-color: $backgroundWhite;
-	height: calc(100vh - 16px);
+  font-family: 'Open Sans', sans-serif;
+  background-color: $backgroundWhite;
+  height: calc(100vh - 16px);
 }

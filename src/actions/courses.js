@@ -1,41 +1,45 @@
+// eslint-disable-next-line no-undef
 const Axios = require('axios');
 
+// eslint-disable-next-line no-undef
 const secret = process.env.REACT_APP_SECRET_NAME;
 
 export const getCategories = () => {
-  //   const url = 'https://frontend-hiring.appspot.com/all_categories';
-  const url = 'https://frontend-hiring.appspot.com/all_courses';
-  console.log('secret', secret);
+  const url = 'https://course-catelog.free.beeceptor.com/all_categories';
   const params = { secret };
-  //   return Axios.get(url, { params })
   return Axios({
     url,
     method: 'GET',
     params,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      //   Accept: '*/*',
-      Host: 'frontend-hiring.appspot.com',
-      //   'Accept-Encoding': 'gzip, deflate, br',
+      'Content-Type': 'application/json',
     },
   })
     .then((response) => {
-      // handle success
-      console.log(response);
+      return response && response.data;
     })
     .catch((error) => {
-      // handle error
-      console.log('here', error);
+      console.log('error', error);
     });
 };
 
-export const getCourses = () =>
-  Axios.get('/user?ID=12345')
+export const getCourses = () => {
+  const url = 'https://course-catelog.free.beeceptor.com/all_courses';
+  const params = { secret };
+  return Axios({
+    url,
+    method: 'GET',
+    params,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    },
+  })
     .then((response) => {
-      // handle success
-      console.log(response);
+      return response && response.data;
     })
     .catch((error) => {
-      // handle error
-      console.log(error);
+      console.log('error', error);
     });
+};
