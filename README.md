@@ -10,7 +10,7 @@ In the project directory, you can run:
 To run a development server you'll need following prerequisites on your machine:
 
 - Git
-- Node.js - This project is built with current [Node](https://nodejs.org/en/download) version 16.13.2 with npm version 8.1.2
+- Node.js - This project is built with current [Node](https://nodejs.org/en/download) version 16.13.2 and npm version 8.1.2
 
 ## Setup
 
